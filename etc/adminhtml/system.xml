@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Landofcoder
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
+ * If you wish to customise this module for your needs.
+ * Please contact us https://landofcoder.com/contacts.
+ *
+ * @category   Lof
+ * @package    Lof_CustomerPassword
+ * @copyright  Copyright (C) 2020 Landofcoder (https://landofcoder.com/)
+ * @license    https://landofcoder.com/magento2-extension-license/
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="landofcoder" sortOrder="9999" translate="label">
+			<label>Landofcoder Extensions</label>
+		</tab>
+		<section id="customer_password" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Customer Password</label>
+			<tab>landofcoder</tab>
+			<resource>Lof_CustomerPassword::config_customerpassword</resource>
+			<group id="hint" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+				<frontend_model>Lof\CustomerPassword\Block\Adminhtml\System\Config\Fieldset\Hint</frontend_model>
+			</group>
+			<group id="general" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>General</label>
+				<field id="enable" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="enable_cli" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label comment" type="select">
+					<label>Console Command</label>
+            				<comment><![CDATA[Enable console command to change customer's password by either id or email <br /><code>customer:password:change [-p|--password="..."] [-i|--customer-id[="..."]] [-e|--customer-email[="..."]]</code> ]]></comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>
